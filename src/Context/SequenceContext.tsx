@@ -1,8 +1,8 @@
 import React, { createContext, Dispatch, useState } from "react";
 
 interface inputContextTypes {
-  frstInput: string;
-  setFrstInput: Dispatch<React.SetStateAction<string>>;
+  firstInput: string;
+  setFirstInput: Dispatch<React.SetStateAction<string>>;
   secondInput: string;
   setSecondInput: Dispatch<React.SetStateAction<string>>;
   values: string[];
@@ -10,8 +10,8 @@ interface inputContextTypes {
 }
 
 export let inputContext = createContext<inputContextTypes>({
-  frstInput: "",
-  setFrstInput: () => {},
+  firstInput: "",
+  setFirstInput: () => {},
   secondInput: "",
   setSecondInput: () => {},
   values: [],
@@ -23,17 +23,19 @@ export const SequenceContext = ({
 }: {
   children: React.ReactNode;
 }) => {
-  let [frstInput, setFrstInput] = useState<string>("");
+  let [firstInput, setFirstInput] = useState<string>("");
   let [secondInput, setSecondInput] = useState<string>("");
   let [values, setValues] = useState<string[]>([]);
+
   const value: inputContextTypes | null = {
-    frstInput: frstInput,
-    setFrstInput: setFrstInput,
+    firstInput: firstInput,
+    setFirstInput: setFirstInput,
     secondInput: secondInput,
     setSecondInput: setSecondInput,
     values: values,
     setValues: setValues,
   };
+
   return (
     <inputContext.Provider value={value}>{children}</inputContext.Provider>
   );

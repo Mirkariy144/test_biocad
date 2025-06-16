@@ -1,8 +1,8 @@
-import React from "react";
 import "./App.css";
-import { SequenceContext } from "./Context/SequenceContext";
-import { Inputs } from "./Inputs/Inputs";
-import { Letters } from "./Sequence_output/Letters";
+import { SequenceContext } from "./context/SequenceContext";
+
+import Inputs from "./components/inputs";
+import Letters from "./components/letters";
 
 function App() {
   return (

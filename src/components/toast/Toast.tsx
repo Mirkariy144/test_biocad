@@ -1,19 +1,15 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Alert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 import Slide from "@mui/material/Slide";
 
-type TemporaryAlertProps = {
+type ToastProps = {
   message?: string;
   open: boolean;
   onClose: () => void;
 };
 
-export const TemporaryAlert = ({
-  message,
-  open,
-  onClose,
-}: TemporaryAlertProps) => {
+const Toast = ({ message, open, onClose }: ToastProps) => {
   useEffect(() => {
     if (open) {
       const timer = setTimeout(() => {
@@ -43,3 +39,5 @@ export const TemporaryAlert = ({
     </Snackbar>
   );
 };
+
+export default Toast;
